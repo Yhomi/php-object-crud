@@ -51,7 +51,7 @@
             <h4 class="mt-2 text-primary">All Users in DB</h4>
         </div>
         <div class="col-lg-6">
-            <button type="button" class="btn btn-primary m-1 float-right"><i class="fas fa-user-plus fa-lg"></i>&nbsp;Add New User</button>
+            <button type="button" class="btn btn-primary m-1 float-right" data-toggle="modal" data-target="#addNew"><i class="fas fa-user-plus fa-lg"></i>&nbsp;Add New User</button>
             <a href="#" class="btn btn-success m-1 float-right"><i class="fas fa-table fa-lg"></i>&nbsp;Export to Excel</a>
         </div>
     </div>
@@ -93,6 +93,41 @@
         </div>
     </div>
 </div>
+
+<!-- Add New User -->
+  <div class="modal fade" id="addNew">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Add New User</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body px-4">
+          <form method="post" action="" id="form">
+            <div class="form-group">
+                <input type="text" name="fname" id="fname" class="form-control" placeholder="First Name">
+            </div>
+            <div class="form-group">
+                <input type="text" name="lname" id="lname" class="form-control" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+                <input type="text" name="email" id="email" class="form-control" placeholder="E-Mail">
+            </div>
+            <div class="form-group">
+                <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone Number">
+            </div>
+            <div class="form-group">
+                <input type="submit" name="submit" id="butn" class="btn btn-primary btn-block" value="Add User">
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
 
 
 
