@@ -39,11 +39,16 @@ $(document).ready(function() {
                         title: 'User added successfully',
                         icon: 'success'
                     });
-                    $('#addNew').modal('hide');
+                    // $('#addNew').modal('hide');
                     $('#form')[0].reset();
                     showAllUsers();
                 }
             })
         }
+    })
+
+    // edit user
+    $('body').on('click', '.editBtn', function(e) {
+        console.log('working')
     })
 });

@@ -29,9 +29,9 @@
                     <td>'.$row['email'].'</td>
                     <td>'.$row['phone'].'</td>
                     <td>
-                        <a href="#" title="view details" class="text-success"><i class="fas fa-info-circle fa-lg"></i></a>&nbsp;&nbsp;
-                        <a href="#" title="edit user" class="text-primary"><i class="fas fa-edit fa-lg"></i></a>&nbsp;&nbsp;
-                        <a href="#" title="delete user" class="text-danger"><i class="fas fa-trash-alt fa-lg"></i></a>
+                        <a href="#" title="view details" class="text-success infoBtn" ><i class="fas fa-info-circle fa-lg"></i></a>&nbsp;&nbsp;
+                        <a href="edit.php?id='.$row['id'].'" title="edit user" class="text-primary editBtn"><i class="fas fa-edit fa-lg"></i></a>&nbsp;&nbsp;
+                        <a href="#" title="delete user" class="text-danger delBtn"><i class="fas fa-trash-alt fa-lg"></i></a>
                     </td>
                 </tr> ';
             }

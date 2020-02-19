@@ -15,7 +15,7 @@
         }
 
         public function insert($fname,$lname,$email,$phone){
-            $sql="INSERT into users(first_name,last_name,email,phone) VALUES(:fname,:lname,:email,:email)";
+            $sql="INSERT into users(first_name,last_name,email,phone) VALUES(:fname,:lname,:email,:phone)";
             $stmt=$this->conn->prepare($sql);
             $stmt->execute(['fname'=>$fname,'lname'=>$lname,'email'=>$email,"phone"=>$phone]);
             return true;
