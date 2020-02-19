@@ -1,6 +1,11 @@
 <?php
+include "db.php";
+$db=new Database();
     if(isset($_GET['id'])){
         $id=$_GET['id'];
+        $result=$db->selectUser($id);
+
+
     }
 ?>
 <!DOCTYPE html>
@@ -8,7 +13,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <title>Document</title>
      <!-- Font Awesome-->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
@@ -18,25 +22,26 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css"/>
 </head>
 <body>
-    <?php echo $id; ?>
     <div class="container">
         <div class="row justify-content-center mx-auto mt-5">
             <div class="col-md-6">
-                <form method="post" action="" id="form">
+                <h3 class="text-primary text-center mb-2">Edit User</h3>
+                <form method="post" action="" id="edit-form">
+                    <input type="hidden" id="edit" name="edit" value="<?php echo $result['id']; ?>">
                     <div class="form-group">
-                        <input type="text" name="fname" id="fname" class="form-control" placeholder="First Name">
+                        <input type="text" name="fname" id="edit-fname" class="form-control" value="<?php echo $result['first_name']; ?>">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="lname" id="lname" class="form-control" placeholder="Last Name">
+                        <input type="text" name="lname" id="edit-lname" class="form-control" value="<?php echo $result['last_name']; ?>">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="email" id="email" class="form-control" placeholder="E-Mail">
+                        <input type="text" name="email" id="edit-email" class="form-control" value="<?php echo $result['email']; ?>"">
                     </div>
                     <div class="form-group">
-                        <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone Number">
+                        <input type="tel" name="phone" id="edit-phone" class="form-control" value="<?php echo $result['phone']; ?>"">
                     </div>
                     <div class="form-group">
-                        <input type="submit" name="submit" id="butn" class="btn btn-primary btn-block" value="Add User">
+                        <input type="submit" name="submit" id="edit-butn" class="btn btn-primary btn-block" value="Edit User">
                     </div>
                 </form>
             </div>

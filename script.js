@@ -39,7 +39,7 @@ $(document).ready(function() {
                         title: 'User added successfully',
                         icon: 'success'
                     });
-                    // $('#addNew').modal('hide');
+                    $('#addNew').modal('hide');
                     $('#form')[0].reset();
                     showAllUsers();
                 }
@@ -50,5 +50,31 @@ $(document).ready(function() {
     // edit user
     $('body').on('click', '.editBtn', function(e) {
         console.log('working')
+    })
+    $('#edit-butn').click(function(e) {
+        e.preventDefault()
+        let up_id = $("#edit").val()
+        let fn = $('#edit-fname').val()
+        let ln = $('#edit-lname').val()
+        let e_mail = $('#edit-email').val()
+        let e_phone = $('#edit-phone').val()
+        if (fn == "" || ln == "" || e_mail == "" || e_phone == "") {
+            console.log("Fields Can not be empty")
+        } else {
+            $.ajax({
+                url: 'action.php',
+                type: "POST",
+                data: { fn: fn, ln: ln, e_mail: e_mail, e_phone: e_phone, up_id: up_id },
+                success: function(response) {
+                    swal.fire({
+                        title: "User changed successfully!",
+                        icon: 'success'
+                    }).then(function() {
+                        location.href = "index.php"
+                    })
+
+                }
+            })
+        }
     })
 });

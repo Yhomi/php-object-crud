@@ -53,4 +53,14 @@
             // echo "User added Successfully";
         
     }
+
+    if(isset($_POST['fn']) && isset($_POST['ln']) && isset($_POST['e_mail']) && isset($_POST['e_phone'])){
+        $new_email=$_POST['e_mail'];
+        $new_fn=$_POST['fn'];
+        $new_ln=$_POST['ln'];
+        $new_phone=$_POST['e_phone'];
+        $up_id=$_POST['up_id'];
+        // echo $up_id;
+         $db->update($up_id,$new_fn,$new_ln,$new_email,$new_phone);
+    }
 ?>
