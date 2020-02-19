@@ -59,36 +59,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="table-responsive" id="user">
-                <table class="table table-striped table-sm table-bordered">
-                    <thead>
-                        <tr class="text-center">
-                            <th>ID</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <?php for($i=1; $i<=100;$i++): ?>
-                        <tr class="text-center text-secondary">
-                            <td><?php echo $i; ?></td>
-                            <td>User <?php echo $i; ?></td>
-                            <td>Test <?php echo $i; ?></td>
-                            <td>test.<?php echo $i; ?>@test.com</td>
-                            <td>081xxxxxxx</td>
-                            <td>
-                                <a href="#" title="view details" class="text-success"><i class="fas fa-info-circle fa-lg"></i></a>&nbsp;&nbsp;
-                                <a href="#" title="edit user" class="text-primary"><i class="fas fa-edit fa-lg"></i></a>&nbsp;&nbsp;
-                                <a href="#" title="delete user" class="text-danger"><i class="fas fa-trash-alt fa-lg"></i></a>
-                            </td>
-
-
-                        </tr>
-                    <?php endfor; ?>
-                    </tbody>
-                </table>
+                
             </div>
         </div>
     </div>
@@ -137,16 +108,13 @@
 
 
 
-
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> 
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-<script>
-    $(document).ready(function(){
-        $('table').DataTable();
-    });
-</script>
+<!-- <script src="jquery-3.3.1.min.js"></script> -->
+<script src="script.js"></script>
 </body>
 </html>

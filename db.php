@@ -66,7 +66,7 @@
 
     }
 
-    $db=new Database();
+    // $db=new Database();
     // print_r($db->read());
-    echo $db->totalRow();
+    // echo $db->totalRow();
 ?>
