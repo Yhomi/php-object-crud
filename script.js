@@ -110,4 +110,31 @@ $(document).ready(function() {
             }
         })
     })
+
+    // $('#test').click(function() {
+    //     console.log('click')
+    // })
+    $('body').on('click', '.infoBtn', function() {
+        // console.log(123)
+        let user_id = $(this).attr('id')
+            // console.log(user_id)
+        $.ajax({
+            url: 'action.php',
+            type: "POST",
+            data: { user_id: user_id },
+            success: function(res) {
+                let user = JSON.parse(res);
+                // console.log(user)
+                swal.fire({
+                    title: `<strong>User Info: ID(${user.id})</strong>`,
+                    icon: 'info',
+                    html: `<h3>Name: ${user.first_name} ${user.last_name}</h3>
+                            <h4>Email: ${user.email}</h4>
+                            <h5>Phone: ${user.phone}</h5>
+                    `,
+                    showCancelButton: true
+                })
+            }
+        })
+    })
 });

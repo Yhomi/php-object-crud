@@ -44,6 +44,7 @@
     <div class="row">
         <div class="col-lg-12">
            <h3 class="text-center text-primary font-weight-normal my-3"> CRUD Application Using PDO and Sweetalert</h3>
+           <!-- <h1 id="test">Test</h1> -->
         </div>
     </div>
     <div class="row">
@@ -52,14 +53,14 @@
         </div>
         <div class="col-lg-6">
             <button type="button" class="btn btn-primary m-1 float-right" data-toggle="modal" data-target="#addNew"><i class="fas fa-user-plus fa-lg"></i>&nbsp;Add New User</button>
-            <a href="#" class="btn btn-success m-1 float-right"><i class="fas fa-table fa-lg"></i>&nbsp;Export to Excel</a>
+            <a href="action.php?export=excel" class="btn btn-success m-1 float-right" id="export"><i class="fas fa-table fa-lg"></i>&nbsp;Export to Excel</a>
         </div>
     </div>
     <hr class="my-1">
     <div class="row">
         <div class="col-lg-12">
             <div class="table-responsive" id="user">
-                
+                <h3 class="text-center text-success" style="margin-top:150px">Loading...</h3>
             </div>
         </div>
     </div>

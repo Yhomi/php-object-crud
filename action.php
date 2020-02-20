@@ -29,7 +29,7 @@
                     <td>'.$row['email'].'</td>
                     <td>'.$row['phone'].'</td>
                     <td>
-                        <a href="#" id="'.$row['id'].'" title="view details" class="text-success infoBtn" ><i class="fas fa-info-circle fa-lg"></i></a>&nbsp;&nbsp;
+                        <a href="#" id="'.$row['id'].'" title="view details" class="text-success infoBtn"><i class="fas fa-info-circle fa-lg"></i></a>&nbsp;&nbsp;
                         <a href="edit.php?id='.$row['id'].'" title="edit user" class="text-primary editBtn"><i class="fas fa-edit fa-lg"></i></a>&nbsp;&nbsp;
                         <a href="#" id="'.$row['id'].'" title="delete user" class="text-danger delBtn"><i class="fas fa-trash-alt fa-lg"></i></a>
                     </td>
@@ -80,5 +80,43 @@
              echo "Unable to delete user!";
          }
         
+    }
+
+    // User Info
+    if(isset($_POST['user_id'])){
+        $User_info=$_POST['user_id'];
+        // echo "The user you want to view info is user $User_info";
+        $user=$db->selectUser($User_info);
+        echo json_encode($user);
+    }
+
+    // Export to Excel
+
+    if(isset($_GET['export']) && $_GET['export']=='excel'){
+        header("Content-Type:application/xls");
+        header("Content-Disposition:attachment;filename=users.xls");
+        header("Pragma:no-cache");
+        header("Expires:0");
+
+        $data=$db->read();
+        echo '<table border="1">';
+        echo '<tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+        </tr>';
+        foreach($data as $row){
+            echo '<tr>
+              <td>'.$row['id'].'</td>
+              <td>'.$row['first_name'].'</td>
+              <td>'.$row['last_name'].'</td>
+              <td>'.$row['email'].'</td>
+              <td>'.$row['phone'].'</td>
+            </tr>';
+        }
+        echo '</table>';
+
     }
 ?>
