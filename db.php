@@ -51,7 +51,7 @@
         public function deleteUser($id){
             $sql="DELETE FROM users WHERE id=:id";
             $stmt=$this->conn->prepare($sql);
-            $stmt->execute(['id'=>id]);
+            $stmt->execute(['id'=>$id]);
             return true;
         }
 

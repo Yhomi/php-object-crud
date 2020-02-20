@@ -77,4 +77,37 @@ $(document).ready(function() {
             })
         }
     })
+
+    //delete user
+    $('body').on('click', '.delBtn', function() {
+        // console.log('delete button clicked')
+        let del_id = $(this).attr('id');
+        // console.log(del_id)
+        swal.fire({
+            title: "Are You Sure You want to Delete this User?",
+            text: "You won't be able able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.value) {
+                $.ajax({
+                    url: 'action.php',
+                    type: "POST",
+                    data: { del_id: del_id },
+                    success: function(response) {
+                        swal.fire({
+                                title: "User",
+                                text: response
+                            }).then(() => {
+                                location.reload(true)
+                            })
+                            // showAllUsers()
+                    }
+                })
+            }
+        })
+    })
 });
